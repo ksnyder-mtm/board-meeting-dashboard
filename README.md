@@ -1,46 +1,184 @@
-# Getting Started with Create React App
+# Get Out and Play! Board Meeting Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A stateless web application that displays a personalized visual dashboard for nonprofit board meetings, featuring AI-generated branding and interactive status management.
+
+## Live Demo
+
+Visit the deployed application at [Netlify URL will be here after deployment]
+
+## Features
+
+### Core Functionality
+- **Instant Dashboard Display** - No login required, immediate access to board meeting tools
+- **Smart Branding System** - Auto-generated logo and color scheme based on nonprofit type
+- **AI-Generated Topic Descriptions** - Intelligent descriptions for each agenda item
+- **Interactive Topic Cards** - Hover for detailed descriptions, click to edit
+- **Drag-and-Drop Reordering** - Prioritize agenda items in real-time
+- **Status Tracking** - Mark items as not started, in progress, completed, or deferred
+- **Time Management** - Editable time estimates for each topic
+- **PDF Export** - Generate professional meeting summaries
+- **Responsive Design** - Optimized for desktop presentation and mobile viewing
+
+### Smart Features
+- Color-coded priority levels (High, Medium, Low)
+- Real-time progress tracking
+- Meeting time calculator
+- Professional nonprofit aesthetic
+- Type-specific branding templates
+
+## Technology Stack
+
+- **Frontend:** React with TypeScript
+- **Styling:** CSS3 with CSS Variables
+- **Drag & Drop:** @dnd-kit (React 19 compatible)
+- **PDF Generation:** jspdf & html2canvas
+- **Icons:** Lucide React
+- **Fonts:** Google Fonts (type-specific selections)
+- **Hosting:** Netlify
+- **Build Tool:** Create React App
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/board-meeting-dashboard.git
+cd board-meeting-dashboard
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view in browser
+
+## Configuration
+
+The application is configured with the following default values in `src/App.tsx`:
+
+```typescript
+const NONPROFIT_TYPE = 'After School Program for Kids';
+const NONPROFIT_NAME = 'Get Out and Play!';
+const TOPIC_1 = 'Funding, given the current political climate';
+const TOPIC_2 = 'Increase community outreach';
+const TOPIC_3 = 'Tracking efficacy';
+```
+
+To customize for your nonprofit, simply update these constants.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds for production to the `build` folder
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### `npm start`
+## Branding System
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application includes pre-configured branding for various nonprofit types:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **After School Programs** - Playful colors with Comic Neue font
+- **Animal Rescue** - Warm oranges with paw print icon
+- **Food Banks** - Greens with harvest theme
+- **Environmental** - Earth tones with nature icons
+- **Healthcare** - Professional blues with medical themes
+- **Education** - Academic purples with book icons
 
-### `npm test`
+## Usage Guide
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Managing Topics
+1. **View Details** - Hover over any topic card to see full description
+2. **Edit Time** - Click on the time estimate to modify
+3. **Reorder** - Drag cards using the grip handle to rearrange priorities
+4. **Update Status** - Click status buttons to track progress
 
-### `npm run build`
+### Exporting
+1. Click the "Export PDF" button in the header
+2. The current dashboard state will be captured
+3. A PDF file will download with the meeting summary
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Responsive Views
+- **Desktop** - Full dashboard with side-by-side topic cards
+- **Tablet** - Stacked layout with maintained functionality
+- **Mobile** - Single column view optimized for phones
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+board-meeting-dashboard/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── TopicCard.tsx       # Interactive topic card component
+│   ├── utils/
+│   │   ├── branding.ts         # Smart branding system
+│   │   └── topicDescriptions.ts # AI-style topic generation
+│   ├── App.tsx                  # Main application component
+│   ├── App.css                  # Styling with CSS variables
+│   └── index.tsx                # Application entry point
+├── package.json
+└── README.md
+```
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Deploy to Netlify
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Build the production version:
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Deploy using Netlify CLI:
+```bash
+npm install -g netlify-cli
+netlify deploy --dir=build --prod
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Or use the Netlify web interface:
+1. Connect your GitHub repository
+2. Set build command: `npm run build`
+3. Set publish directory: `build`
+4. Deploy
 
-## Learn More
+## Browser Support
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Designed for small to midsize nonprofits (5-1000 FTE)
+- Built with accessibility and ease-of-use in mind
+- Optimized for board meeting presentations
+- No backend required - fully client-side application
+
+## Support
+
+For issues, questions, or suggestions, please open an issue on GitHub.
+
+---
+
+**Built with ❤️ for nonprofit organizations**
