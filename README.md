@@ -41,7 +41,7 @@ Visit the deployed application at [Netlify URL will be here after deployment]
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/board-meeting-dashboard.git
+git clone https://github.com/ksnyder-mtm/board-meeting-dashboard.git
 cd board-meeting-dashboard
 ```
 
@@ -130,22 +130,35 @@ board-meeting-dashboard/
 
 ### Deploy to Netlify
 
-1. Build the production version:
-```bash
-npm run build
-```
+This project is configured for easy deployment to Netlify with the included `netlify.toml` file.
 
-2. Deploy using Netlify CLI:
+#### Option 1: Deploy via Netlify Web Interface (Recommended)
+
+1. Go to [https://app.netlify.com](https://app.netlify.com)
+2. Click "Add new site" → "Import an existing project"
+3. Choose "Deploy with GitHub"
+4. Select the repository: `board-meeting-dashboard`
+5. Netlify will auto-detect the build settings from `netlify.toml`
+6. Click "Deploy site"
+
+Your site will be live at a Netlify URL (e.g., `https://your-site-name.netlify.app`)
+
+#### Option 2: Deploy using Netlify CLI
+
+1. Install Netlify CLI:
 ```bash
 npm install -g netlify-cli
+```
+
+2. Build and deploy:
+```bash
+npm run build
 netlify deploy --dir=build --prod
 ```
 
-Or use the Netlify web interface:
-1. Connect your GitHub repository
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-4. Deploy
+#### Continuous Deployment
+
+Once connected to GitHub, Netlify will automatically deploy updates when you push to the main branch.
 
 ## Browser Support
 
